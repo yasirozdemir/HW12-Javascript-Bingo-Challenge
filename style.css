@@ -38,13 +38,25 @@ button {
     margin-bottom: 50px;
 }
 
-#cellContainer, .newPlayerArea {
+#cellContainer {
     width: 75%;
     margin-inline: auto;
     text-align: center;
 } 
 
-.cells, .newPlayerCell {
+#newPlayersContainer {
+    margin-inline: auto;
+    text-align: center;
+}
+
+
+.newPlayerArea {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+.cells {
     display: inline-block;
     width: 50px;
     height: 50px;

@@ -53,14 +53,25 @@ function randomizeArrayForNewPlayers() {
   return arrayOf24;
 }
 
-// function createNewPlayers() {
-//   let inputNodeValue = document.getElementById("user-board_input").value;
-//   let mainContainer = document.getElementById("main-container");
+function createNewPlayers() {
+  //let inputNodeValue = document.getElementById("user-board_input").value;
+  let newPlayersContainer = document.getElementById("newPlayersContainer");
 
-//   let newPlayerContainer = document.createElement("div");
-//   newPlayerContainer.classList.add("newPlayerArea");
-//   newPlayerContainer.appendChild(mainContainer);
-// }
+  let newPlayerArea = document.createElement("div"); // new div created to add new player boards
+  newPlayerArea.classList.add("newPlayerArea"); // class added to style the new div
+  newPlayersContainer.appendChild(newPlayerArea); // appended to the main container
+
+  let newCellsForNewPlayer = randomizeArrayForNewPlayers(); // using the function an array is created for the new cells
+
+  for (let i = 0; i < 24; i++) {
+    // for loop to create new cells using the randomized array
+
+    let newCell = document.createElement("div");
+    newCell.innerText = newCellsForNewPlayer[i];
+    newCell.classList.add("cells");
+    newPlayerArea.appendChild(newCell);
+  }
+}
 
 function createCells() {
   let cellContainer = document.getElementById("cellContainer");
