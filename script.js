@@ -3,7 +3,7 @@
 //-------------------------------------
 
 function randomizeNumber() {
-  return (randomNumber = Math.floor(Math.random() * 77));
+  return (randomNumber = Math.floor(Math.random() * 76) + 1);
 }
 
 function randomizeBackgroundColor() {
