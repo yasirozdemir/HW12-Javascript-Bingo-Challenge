@@ -14,6 +14,19 @@ function randomizeBackgroundColor() {
   return [r, g, b];
 }
 
+function selectCellRespectToRandomNumber() {
+  let randomNumber = randomizeNumber();
+  let randomBackgroundColor = randomizeBackgroundColor();
+
+  let allCells = document.querySelectorAll(".cells");
+
+  for (let cell of allCells) {
+    if (randomNumber === parseInt(cell.innerText)) {
+      cell.style.backgroundColor = `rgb(${randomBackgroundColor})`;
+    }
+  }
+}
+
 function randomizeArrayForNewPlayers() {
   //to be able to create a new player, we created a new array which have 24 random elements
 
@@ -38,19 +51,6 @@ function randomizeArrayForNewPlayers() {
     arrayOf24[i] = numbersArray[i];
   }
   return arrayOf24;
-}
-
-function selectCellRespectToRandomNumber() {
-  let randomNumber = randomizeNumber();
-  let randomBackgroundColor = randomizeBackgroundColor();
-
-  let allCells = document.querySelectorAll(".cells");
-
-  for (let cell of allCells) {
-    if (randomNumber === parseInt(cell.innerText)) {
-      cell.style.backgroundColor = `rgb(${randomBackgroundColor})`;
-    }
-  }
 }
 
 // function createNewPlayers() {
