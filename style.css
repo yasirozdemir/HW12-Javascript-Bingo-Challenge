@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(72, 68, 68);
+    color: rgb(240, 240, 240);
+}  
+
+h1 {
+    cursor: default;
+}
+
+button {
+    cursor: pointer;
+}
+
+#inputContainer {
+    width: 700px;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#cellContainer {
+    width: 75%;
+    margin-inline: auto;
+    text-align: center;
+} 
+
+.cells {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: solid 2px white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    font-weight: 500;
+    font-size: 24px;
+    cursor: default;
+}
+
+.selected {
+    background-color: blue;
+}
