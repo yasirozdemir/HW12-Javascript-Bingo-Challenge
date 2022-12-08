@@ -51,9 +51,16 @@ button {
 
 
 .newPlayerArea {
+    margin-top: 50px;
+    margin-right: 50px;
     width: 30%;
     display: inline-block;
     text-align: center;
+    background-color: rgb(125, 119, 119);
+    border: solid 1px white;
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .cells {

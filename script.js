@@ -53,8 +53,7 @@ function randomizeArrayForNewPlayers() {
   return arrayOf24;
 }
 
-function createNewPlayers() {
-  //let inputNodeValue = document.getElementById("user-board_input").value;
+function createNewPlayers(playerId) {
   let newPlayersContainer = document.getElementById("newPlayersContainer");
 
   let newPlayerArea = document.createElement("div"); // new div created to add new player boards
@@ -63,6 +62,10 @@ function createNewPlayers() {
 
   let newCellsForNewPlayer = randomizeArrayForNewPlayers(); // using the function an array is created for the new cells
 
+  let title = document.createElement("h2");
+  title.innerText = `Player ${playerId}`;
+  newPlayerArea.appendChild(title);
+
   for (let i = 0; i < 24; i++) {
     // for loop to create new cells using the randomized array
 
@@ -70,6 +73,14 @@ function createNewPlayers() {
     newCell.innerText = newCellsForNewPlayer[i];
     newCell.classList.add("cells");
     newPlayerArea.appendChild(newCell);
+  }
+}
+
+function onClickTriggerCreateNewPlayers() {
+  let inputNodeValue = document.getElementById("user-board_input").value; // reading the value taken from user (number of new players)
+
+  for (let i = 1; i <= inputNodeValue; i++) {
+    createNewPlayers(i);
   }
 }
 
