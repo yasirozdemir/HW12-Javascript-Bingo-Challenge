@@ -8,15 +8,17 @@
     <title>Bingo Board</title>
 </head>
 <body>
-    <div id="inputContainer">
-        <h1>Bingo Board</h1>
-        <input type="text" id="user-board_input">
-        <button id="user-board_button" onclick="setNumberOfPlayers()">Set Number of Players</button>
+    <div id="main-container">
+        <div id="inputContainer">
+            <h1>Bingo Board</h1>
+            <input type="text" id="user-board_input">
+            <button id="user-board_button" onclick="createNewPlayers()">Set Number of Players</button>
 
-        <button id="pick-random" onclick="selectCellRespectToRandomNumber()">Pick Random</button>
-    </div>
-    <div id="cellContainer">
-        <!-- cells will be appended here -->
+            <button id="pick-random" onclick="selectCellRespectToRandomNumber()">Pick Random</button>
+        </div>
+        <div id="cellContainer">
+            <!-- cells will be appended here -->
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>

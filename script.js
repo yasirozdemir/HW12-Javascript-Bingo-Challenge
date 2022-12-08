@@ -2,25 +2,6 @@
 
 //-------------------------------------
 
-// function randomizeNumber() {
-//   let arrayOfNumbers = [];
-//   for (let i = 1; i <= 76; i++) {
-//     arrayOfNumbers.push(i);
-//   }
-
-//   var copy = arrayOfNumbers.slice(0);
-
-//   return function () {
-//     if (copy.length < 1) {
-//       copy = arrayOfNumbers.slice(0);
-//     }
-//     var index = Math.floor(Math.random() * copy.length);
-//     var item = copy[index];
-//     copy.splice(index, 1);
-//     console.log(item);
-//   };
-// }
-
 function randomizeNumber() {
   return (randomNumber = Math.floor(Math.random() * 77));
 }
@@ -36,21 +17,27 @@ function randomizeBackgroundColor() {
 function randomizeArrayForNewPlayers() {
   //to be able to create a new player, we created a new array which have 24 random elements
 
-  var i = arrayOfNumbers.length;
+  let numbersArray = [];
+  for (let i = 1; i <= 76; i++) {
+    numbersArray.push(i);
+  }
+
+  var i = numbersArray.length;
   j = 0;
   let temp;
 
   while (i--) {
-    j = Math.floor(Math.random() * (i + 1));
-    arrayOfNumbers[i] = arrayOfNumbers[j];
-    arrayOfNumbers[j] = temp;
+    j = Math.floor(Math.random() * (i + 1)); // used math floor to round the number because math random return float
+    temp = numbersArray[i];
+    numbersArray[i] = numbersArray[j];
+    numbersArray[j] = temp;
   }
 
   let arrayOf24 = [];
   for (let i = 0; i < 24; i++) {
-    arrayOf24[i] = arrayOfNumbers[i];
+    arrayOf24[i] = numbersArray[i];
   }
-  console.log(arrayOf24);
+  return arrayOf24;
 }
 
 function selectCellRespectToRandomNumber() {
@@ -61,12 +48,19 @@ function selectCellRespectToRandomNumber() {
 
   for (let cell of allCells) {
     if (randomNumber === parseInt(cell.innerText)) {
-      console.log(cell);
-      console.log(randomBackgroundColor);
       cell.style.backgroundColor = `rgb(${randomBackgroundColor})`;
     }
   }
 }
+
+// function createNewPlayers() {
+//   let inputNodeValue = document.getElementById("user-board_input").value;
+//   let mainContainer = document.getElementById("main-container");
+
+//   let newPlayerContainer = document.createElement("div");
+//   newPlayerContainer.classList.add("newPlayerArea");
+//   newPlayerContainer.appendChild(mainContainer);
+// }
 
 function createCells() {
   let cellContainer = document.getElementById("cellContainer");
