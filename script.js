@@ -1,7 +1,3 @@
-// GLOBAL VARIABLES AND ELEMENTS
-
-//-------------------------------------
-
 function randomizeNumber() {
   return (randomNumber = Math.floor(Math.random() * 76) + 1);
 }
@@ -80,7 +76,7 @@ function onClickTriggerCreateNewPlayers() {
   let inputNodeValue = document.getElementById("user-board_input").value; // reading the value taken from user (number of new players)
 
   for (let i = 1; i <= inputNodeValue; i++) {
-    createNewPlayers(i);
+    createNewPlayers(i); // FIXME: Titles (ex. Player 1) are only correct when first pressed button
   }
 }
 
